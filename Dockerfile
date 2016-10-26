@@ -1,4 +1,4 @@
-FROM driveclutch/infra-elasticsearch:2.3
+FROM driveclutch/infra-elasticsearch:2.3.5
 MAINTAINER david@driveclutch
 
 RUN plugin install cloud-aws
