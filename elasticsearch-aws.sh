@@ -13,7 +13,7 @@ CLIENT_PORT=${CLIENT_PORT:-9200}
 chown elasticsearch /usr/share/elasticsearch/data
 
 gosu elasticsearch elasticsearch \
-  --network.publish_host=${IP} \
+  --network.host=${IP} \
   --http.port=${CLIENT_PORT} \
   --discovery.type=ec2 \
   --discovery.ec2.groups=${SG} \
