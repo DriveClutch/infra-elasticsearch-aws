@@ -13,9 +13,9 @@ CLIENT_PORT=${CLIENT_PORT:-9200}
 chown elasticsearch /usr/share/elasticsearch/data
 
 gosu elasticsearch elasticsearch \
-  --network.host=${IP} \
-  --http.port=${CLIENT_PORT} \
-  --discovery.type=ec2 \
-  --discovery.ec2.groups=${SG} \
-  --cloud.aws.region=${REGION} \
-  --cloud.aws.protocol=https
+  -E network.host=${IP} \
+  -E http.port=${CLIENT_PORT} \
+  -E discovery.type=ec2 \
+  -E discovery.ec2.groups=${SG} \
+  -E cloud.aws.region=${REGION} \
+  -E cloud.aws.protocol=https
