@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 AZ=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)
 REGION=${AZ:0:${#AZ}-1}
@@ -16,6 +16,6 @@ gosu elasticsearch elasticsearch \
   -E network.host=${IP} \
   -E http.port=${CLIENT_PORT} \
   -E discovery.type=ec2 \
-  -E discovery.ec2.groups=${SG} \
+  -E discovery.ec2.groups="${SG}" \
   -E cloud.aws.region=${REGION} \
   -E cloud.aws.protocol=https
