@@ -9,7 +9,7 @@ SG=$(curl -s http://169.254.169.254/latest/meta-data/network/interfaces/macs/${M
 IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
 
 CLIENT_PORT=${CLIENT_PORT:-9200}
-CLUSTER_NAME=${CLUSTER_NAME:-unknowncluster}
+CLUSTER_NAME=${CLUSTER_NAME:-unnamedcluster}
 
 chown elasticsearch /usr/share/elasticsearch/data
 
