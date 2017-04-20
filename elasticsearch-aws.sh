@@ -21,4 +21,5 @@ gosu elasticsearch elasticsearch \
   -E discovery.ec2.groups="${SG}" \
   -E cloud.aws.region=${REGION} \
   -E cloud.aws.protocol=https \
-  -E thread_pool.index.queue_size=${IDX_QUEUE_SIZE}
+  -E thread_pool.index.queue_size=${IDX_QUEUE_SIZE} \
+  $@
