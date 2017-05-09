@@ -18,4 +18,5 @@ gosu elasticsearch elasticsearch \
   --discovery.type=ec2 \
   --discovery.ec2.groups=${SG} \
   --cloud.aws.region=${REGION} \
-  --cloud.aws.protocol=https
+  --cloud.aws.protocol=https \
+  -Des.cluster.name=${CLUSTER_NAME}
