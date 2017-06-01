@@ -1,4 +1,4 @@
-FROM driveclutch/infra-elasticsearch:5.0.1
+FROM driveclutch/infra-elasticsearch:5.4.0
 MAINTAINER David Hallum <david@driveclutch.com>
 
 RUN elasticsearch-plugin install repository-s3 \
