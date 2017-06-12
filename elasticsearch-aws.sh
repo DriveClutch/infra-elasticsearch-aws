@@ -19,9 +19,8 @@ gosu elasticsearch elasticsearch \
   -E node.name="ip-${NODE_NAME}" \
   -E network.host=${IP} \
   -E http.port=${CLIENT_PORT} \
-  -E discovery.type=ec2 \
+  -E discovery.zen.hosts_provider=ec2 \
   -E discovery.ec2.groups="${SG}" \
   -E cloud.aws.region=${REGION} \
-  -E cloud.aws.protocol=https \
   -E thread_pool.index.queue_size=${IDX_QUEUE_SIZE} \
   $@
