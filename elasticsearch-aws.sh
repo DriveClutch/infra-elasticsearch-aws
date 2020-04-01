@@ -7,6 +7,16 @@ REGION=${AZ:0:${#AZ}-1}
 MAC=$(curl -s http://169.254.169.254/latest/meta-data/mac)
 SG=$(curl -s http://169.254.169.254/latest/meta-data/network/interfaces/macs/${MAC}/security-groups)
 IP=$(curl -s http://169.254.169.254/latest/meta-data/local-ipv4)
+S3REPOSETTINGS="'{
+   "type":"s3",
+   "settings":{
+      "bucket":"com.driveclutch.production.es-index-storage",
+      "base_path":"telematics",
+      "access_key":"ACCESS_KEY",
+      "secret_key":"SECRET_KEY"
+   }
+}
+'"
 
 CLIENT_PORT=${CLIENT_PORT:-9200}
 
@@ -19,3 +29,5 @@ gosu elasticsearch elasticsearch \
   --discovery.ec2.groups=${SG} \
   --cloud.aws.region=${REGION} \
   --cloud.aws.protocol=https
+
+curl -X PUT localhost:${CLIENT_PORT}/_snapshot/my_s3_repository?pretty -H "Content-Type: application/json" -d "${S3REPOSETTINGS}"
