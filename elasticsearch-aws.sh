@@ -21,6 +21,7 @@ gosu elasticsearch elasticsearch \
   --cloud.aws.protocol=https \
   --cloud.aws.access_key=${ACCESS_KEY} \
   --cloud.aws.secret_key=${SECRET_KEY} \
-  --repositories.s3.my-s3-bucket=com.driveclutch.production.es-index-storage
+  --repositories.s3.my-s3-bucket=${BUCKET_NAME} \
+  --repositories.s3.base_path=${BASE_PATH}
 
 
