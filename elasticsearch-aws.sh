@@ -18,4 +18,10 @@ gosu elasticsearch elasticsearch \
   --discovery.type=ec2 \
   --discovery.ec2.groups=${SG} \
   --cloud.aws.region=${REGION} \
-  --cloud.aws.protocol=https
+  --cloud.aws.protocol=https \
+  --cloud.aws.access_key=${ACCESS_KEY} \
+  --cloud.aws.secret_key=${SECRET_KEY} \
+  --repositories.s3.my-s3-bucket=${BUCKET_NAME} \
+  --repositories.s3.base_path=${BASE_PATH}
+
+
